@@ -1,0 +1,91 @@
+body {
+  background-color: whitesmoke;
+}
+
+body > h1 {
+  text-align: center;
+}
+
+nav {
+  margin: 30px;
+  box-shadow: 5px 5px rgb(253, 137, 253);
+}
+
+nav > ul {
+  list-style-type: none;
+  border: 3px solid rgb(165, 76, 165);
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav > ul > li > a {
+  color: rgb(3, 170, 3);
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+nav > ul > li > a:hover {
+  color: rgb(165, 76, 165);
+  text-shadow: 3px 3px 5px purple;
+}
+
+.text-type {
+  color: rgb(3, 170, 3);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 8px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+form > fieldset {
+  border: 20px solid rgb(165, 76, 165);
+  border-radius: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  box-shadow: 5px 5px rgb(253, 137, 253);
+}
+
+.btn {
+  border: 2px solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.btn__submit {
+  background-color: rgb(70, 187, 70);
+  margin-left: 200px;
+}
+.btn__clear {
+  background-color: rgb(236, 236, 84);
+}
+.btn:hover {
+  background-color: aliceblue;
+  box-shadow: 2px 2px 5px rgb(165, 76, 165);
+}
+
+.bigbox {
+  background-color: rgb(70, 187, 70);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 200px;
+  height: 200px;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.bigbox:hover {
+  box-shadow: 4px 4px 4px rgb(165, 76, 165);
+}
+
+.littlebox {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(165, 76, 165);
+  border-radius: 10px;
+}

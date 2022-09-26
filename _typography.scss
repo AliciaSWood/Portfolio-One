@@ -1,0 +1,6 @@
+@use "./palette";
+
+@mixin form-text {
+    @include palette.hard-color;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
