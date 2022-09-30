@@ -1,102 +1,62 @@
 @use "./palette";
 @use "./typography";
+@use "./mixins";
 
-@font-face {
-  font-family: 'Libre Baskerville';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/librebaskerville/v14/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNXaxMICA.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-
-$light-background:rgb(165, 76, 165);
-$heading-font:Verdana, Geneva, Tahoma, sans-serif;
-
-@mixin bigbox{
-  background-color:rgb(130, 175, 211);
-    width: 400px;
-    height: 700px;
-    margin: 50px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 10px;
-
-    &__project-header {
-      @include palette.hard-purple;
-      font-family: 'Libre Baskerville';
-      
-    }
-
-    &__desc {
-      display: flex;
-      text-align: center;
-      margin:8px;
-      padding:8px;
-
-    }
-        
-    &:hover {
-      box-shadow: 4px 4px 4px rgb(165, 76, 165);
-      opacity:0.9;
-
-  }
-
-}
-
-@mixin littlebox {
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top:10px;
-}
 
 body {
   background-image: url("https://i.imgur.com/GgJ7r1h.png");
 }
+
+//Home Page
 body > h1 {
-    text-align: center;
+    @include typography.home-body(200px);
 }
+body > h2 {
+  @include typography.home-body(50px);
+}
+
+// Top Navigation Bar
 nav {
     margin: 30px;
-    box-shadow: 5px 5px rgb(253, 137, 253);
+    box-shadow: 5px 5px palette.$light-purple;
+    border-radius: 10px;
     }
     
-    nav > ul {
+    .nav-bar > ul {
     list-style-type:none;
-    border: 3px solid rgb(165, 76, 165);
+    border: 3px solid palette.$deep-purple;
+    border-radius: 10px;
     height: 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     }
     
-    nav > ul > li > a {
-    color:rgb(3, 170, 3);
+    .nav-bar > ul > li > a {
     text-decoration: none;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: typography.$header-cardfont;
+    font-size: 20px;
     font-weight: bold;
+    color:black;    
     }
     
-    nav > ul > li > a:hover {
-    color: rgb(165, 76, 165);
-    text-shadow: 3px 3px 5px purple;
+    .nav-bar > ul > li > a:hover {
+    color: palette.$deep-purple;
+    text-shadow: 3px 3px 5px palette.$light-purple;
     }
     
+
+    // Contact Form
 .text-type {
-    @include typography.form-text;
+    font-family: typography.$header-cardfont;
+    font-weight: bolder;
     padding:8px;
     margin-left:10px;
-    font-weight: bold;
+    
   }
 
   form > fieldset {
-    border:20px solid rgb(165, 76, 165);
+    border:20px solid palette.$deep-purple;
     border-radius: 10px;
     margin-left:200px;
     margin-right:200px;
@@ -105,10 +65,12 @@ nav {
   }
   .btn {
     border: 2px solid black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: typography.$header-cardfont;
+    font-size: 20px;
     margin-top:20px;
     font-size: 20px;
     border-radius: 10px;
+    
 
     &__submit {
         background-color: rgb(70, 187, 70);
@@ -118,67 +80,148 @@ nav {
         background-color: rgb(236, 236, 84);
     }
     &:hover {
-        background-color: aliceblue;
-        box-shadow: 2px 2px 5px rgb(165, 76, 165);
+        box-shadow: 2px 2px 5px palette.$light-purple;
+        cursor:pointer;
+      }
+  }
+
+  .contactbox {
+    
+    &__end-para {
+      font-family: typography.$header-cardfont;
+      text-align: center;
+      font-weight: bold;
     }
   }
+  
+// Projects Page Cards
 
   .ultra-box {
-    display: flex;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-around;
-    height:800px;
-    width:1900px;
-    
-    
+    width:1900px;  
 
-  }
+   }
+
 
   .bigbox1 {
-    @include bigbox;
-
-
+    @include mixins.bigbox;
+    margin-left:50px;
+    
   }
   
   .littlebox1 {
-    @include littlebox;
+    @include mixins.littlebox;
+
   }
 
   .bigbox2 {
-    @include bigbox;
-    
-    &:hover {
-        box-shadow: 4px 4px 4px rgb(165, 76, 165);
+    @include mixins.bigbox;
 
-    }
   }
   
   .littlebox2 {
-    @include littlebox;
+    @include mixins.littlebox;
   }
 
   .bigbox3 {
-    @include bigbox;
-    
-    &:hover {
-        box-shadow: 4px 4px 4px rgb(165, 76, 165);
-
-    }
+    @include mixins.bigbox;
+      
   }
   
   .littlebox3 {
-    @include littlebox;
+    @include mixins.littlebox;
   }
   
   .bigbox4 {
-    @include bigbox;
-    
-    &:hover {
-        box-shadow: 4px 4px 4px rgb(165, 76, 165);
-
-    }
+    @include mixins.bigbox;
+   
   }
   
   .littlebox4 {
-    @include littlebox;
+    @include mixins.littlebox;
   }
 
+// About Me 
+
+.about-info {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height:600px;
+    width:1900px;
+
+    &--wordbox {
+      flex-direction: column;
+      padding-left: 80px;
+      padding-right: 80px;
+      text-align: center;
+    }
+
+    &--para {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: typography.$header-cardfont;
+      ;
+    }
+}
+
+.dragon-image {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 300px;
+  margin-top: 130px;
+}
+
+//Skills Page
+ 
+.transparent-box {
+  background-color:rgb(148, 5, 148, 0.2);
+  height: 42vw;
+  width: 80vw;
+  margin:auto;
+  border-radius: 10px;
+}
+
+.skills-list {
+  height: 41vw;
+  width: 80vw;
+  margin:auto;
+  box-shadow: none;
+    
+ul {
+  list-style-type: none;
+  height: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  font-family: typography.$header-cardfont;
+  margin:auto;
+
+  li > img {
+    height:200px;
+    width:180px;
+    text-align: center;
+
+    
+   }
+
+    }
+   }
+   
+   .text-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33vw;
+    height:100px;
+    background-color: rgb(190, 218, 240);
+    padding: 10px;
+    box-shadow: 5px 5px palette.$deep-purple;
+    border-radius: 10px;
+    border: 2px solid black;
+
+   }

@@ -1,0 +1,76 @@
+@use "./palette";
+@use "./typography";
+
+// Projects Page Mixins
+
+@mixin littlebox {
+    width: 16vw;
+    height: 16vw;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:15px;
+  }
+
+  @mixin bigbox{
+    background-color:rgb(130, 175, 211);
+      width: 20vw;
+      height: 38vw;
+      margin: 30px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 10px;
+  
+      &__project-header {
+        color: palette.$deep-purple;
+        font-family: typography.$header-cardfont;
+        
+      }
+  
+      &__desc {
+        display: flex;
+        text-align: center;
+        margin:8px;
+        padding:8px;
+  
+      }
+          
+      &:hover {
+        box-shadow: 4px 4px 4px palette.$light-purple;
+        opacity:0.7;
+        cursor:pointer;
+  
+    }
+  
+  }
+
+  //Media Queries Mixins
+
+$xs:600px;
+$sm:768px;
+$md:992px;
+$lg:1200px;
+$xl:1440px;
+
+@mixin phone-landscape {
+    @media (min-width: $xs) { @content; }
+  }
+  
+  @mixin tablet-landscape {
+    @media only screen and (min-width: $xs) and (max-width:$sm) {
+        @content;
+    }
+  }
+  
+  @mixin phone-screen {
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      @content;
+      .exampleclass {
+        background: #bada55;
+        font-family: typography.$header-cardfont;
+        font-size: 20px; 
+      }
+    }
+  }

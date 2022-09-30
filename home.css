@@ -11,45 +11,59 @@ body {
 }
 
 body > h1 {
-  text-align: center;
+  font-family: "Libre Baskerville";
+  margin: 100px;
+  font-size: 200px;
+  text-shadow: 5px 5px rgb(175, 170, 170);
+  text-align: end;
+}
+
+body > h2 {
+  font-family: "Libre Baskerville";
+  margin: 100px;
+  font-size: 50px;
+  text-shadow: 5px 5px rgb(175, 170, 170);
+  text-align: end;
 }
 
 nav {
   margin: 30px;
-  box-shadow: 5px 5px rgb(253, 137, 253);
+  box-shadow: 5px 5px rgb(212, 115, 212);
+  border-radius: 10px;
 }
 
-nav > ul {
+.nav-bar > ul {
   list-style-type: none;
-  border: 3px solid rgb(165, 76, 165);
+  border: 3px solid rgb(146, 44, 146);
+  border-radius: 10px;
   height: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-nav > ul > li > a {
-  color: rgb(3, 170, 3);
+.nav-bar > ul > li > a {
   text-decoration: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Libre Baskerville";
+  font-size: 20px;
   font-weight: bold;
+  color: black;
 }
 
-nav > ul > li > a:hover {
-  color: rgb(165, 76, 165);
-  text-shadow: 3px 3px 5px purple;
+.nav-bar > ul > li > a:hover {
+  color: rgb(146, 44, 146);
+  text-shadow: 3px 3px 5px rgb(212, 115, 212);
 }
 
 .text-type {
-  color: rgb(3, 170, 3);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Libre Baskerville";
+  font-weight: bolder;
   padding: 8px;
   margin-left: 10px;
-  font-weight: bold;
 }
 
 form > fieldset {
-  border: 20px solid rgb(165, 76, 165);
+  border: 20px solid rgb(146, 44, 146);
   border-radius: 10px;
   margin-left: 200px;
   margin-right: 200px;
@@ -58,7 +72,8 @@ form > fieldset {
 
 .btn {
   border: 2px solid black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Libre Baskerville";
+  font-size: 20px;
   margin-top: 20px;
   font-size: 20px;
   border-radius: 10px;
@@ -71,29 +86,36 @@ form > fieldset {
   background-color: rgb(236, 236, 84);
 }
 .btn:hover {
-  background-color: aliceblue;
-  box-shadow: 2px 2px 5px rgb(165, 76, 165);
+  box-shadow: 2px 2px 5px rgb(212, 115, 212);
+  cursor: pointer;
+}
+
+.contactbox__end-para {
+  font-family: "Libre Baskerville";
+  text-align: center;
+  font-weight: bold;
 }
 
 .ultra-box {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-around;
-  height: 800px;
   width: 1900px;
 }
 
 .bigbox1 {
   background-color: rgb(130, 175, 211);
-  width: 400px;
-  height: 700px;
-  margin: 50px;
+  width: 20vw;
+  height: 38vw;
+  margin: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+  margin-left: 50px;
 }
 .bigbox1__project-header {
-  color: rgba(143, 30, 143, 0.966);
+  color: rgb(146, 44, 146);
   font-family: "Libre Baskerville";
 }
 .bigbox1__desc {
@@ -103,32 +125,33 @@ form > fieldset {
   padding: 8px;
 }
 .bigbox1:hover {
-  box-shadow: 4px 4px 4px rgb(165, 76, 165);
-  opacity: 0.9;
+  box-shadow: 4px 4px 4px rgb(212, 115, 212);
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .littlebox1 {
-  width: 300px;
-  height: 300px;
+  width: 16vw;
+  height: 16vw;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .bigbox2 {
   background-color: rgb(130, 175, 211);
-  width: 400px;
-  height: 700px;
-  margin: 50px;
+  width: 20vw;
+  height: 38vw;
+  margin: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
 }
 .bigbox2__project-header {
-  color: rgba(143, 30, 143, 0.966);
+  color: rgb(146, 44, 146);
   font-family: "Libre Baskerville";
 }
 .bigbox2__desc {
@@ -138,35 +161,33 @@ form > fieldset {
   padding: 8px;
 }
 .bigbox2:hover {
-  box-shadow: 4px 4px 4px rgb(165, 76, 165);
-  opacity: 0.9;
-}
-.bigbox2:hover {
-  box-shadow: 4px 4px 4px rgb(165, 76, 165);
+  box-shadow: 4px 4px 4px rgb(212, 115, 212);
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .littlebox2 {
-  width: 300px;
-  height: 300px;
+  width: 16vw;
+  height: 16vw;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .bigbox3 {
   background-color: rgb(130, 175, 211);
-  width: 400px;
-  height: 700px;
-  margin: 50px;
+  width: 20vw;
+  height: 38vw;
+  margin: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
 }
 .bigbox3__project-header {
-  color: rgba(143, 30, 143, 0.966);
+  color: rgb(146, 44, 146);
   font-family: "Libre Baskerville";
 }
 .bigbox3__desc {
@@ -176,35 +197,33 @@ form > fieldset {
   padding: 8px;
 }
 .bigbox3:hover {
-  box-shadow: 4px 4px 4px rgb(165, 76, 165);
-  opacity: 0.9;
-}
-.bigbox3:hover {
-  box-shadow: 4px 4px 4px rgb(165, 76, 165);
+  box-shadow: 4px 4px 4px rgb(212, 115, 212);
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .littlebox3 {
-  width: 300px;
-  height: 300px;
+  width: 16vw;
+  height: 16vw;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .bigbox4 {
   background-color: rgb(130, 175, 211);
-  width: 400px;
-  height: 700px;
-  margin: 50px;
+  width: 20vw;
+  height: 38vw;
+  margin: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
 }
 .bigbox4__project-header {
-  color: rgba(143, 30, 143, 0.966);
+  color: rgb(146, 44, 146);
   font-family: "Libre Baskerville";
 }
 .bigbox4__desc {
@@ -214,19 +233,87 @@ form > fieldset {
   padding: 8px;
 }
 .bigbox4:hover {
-  box-shadow: 4px 4px 4px rgb(165, 76, 165);
-  opacity: 0.9;
-}
-.bigbox4:hover {
-  box-shadow: 4px 4px 4px rgb(165, 76, 165);
+  box-shadow: 4px 4px 4px rgb(212, 115, 212);
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .littlebox4 {
-  width: 300px;
-  height: 300px;
+  width: 16vw;
+  height: 16vw;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
+}
+
+.about-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 1900px;
+}
+.about-info--wordbox {
+  flex-direction: column;
+  padding-left: 80px;
+  padding-right: 80px;
+  text-align: center;
+}
+.about-info--para {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Libre Baskerville";
+}
+
+.dragon-image {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 300px;
+  margin-top: 130px;
+}
+
+.transparent-box {
+  background-color: rgba(148, 5, 148, 0.2);
+  height: 42vw;
+  width: 80vw;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.skills-list {
+  height: 41vw;
+  width: 80vw;
+  margin: auto;
+  box-shadow: none;
+}
+.skills-list ul {
+  list-style-type: none;
+  height: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  font-family: "Libre Baskerville";
+  margin: auto;
+}
+.skills-list ul li > img {
+  height: 200px;
+  width: 180px;
+  text-align: center;
+}
+
+.text-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33vw;
+  height: 100px;
+  background-color: rgb(190, 218, 240);
+  padding: 10px;
+  box-shadow: 5px 5px rgb(146, 44, 146);
+  border-radius: 10px;
+  border: 2px solid black;
 }
