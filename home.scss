@@ -12,11 +12,19 @@ body {
 
 .home-title {
  @include typography.home-body(200px);
-   
+ @media only screen and (max-width:600px) { 
+  font-size: 70px;  
+  margin: 20px;
+  padding: 70px 0;
+}
 }
 
 body > h2 {
   @include typography.home-body(50px);
+  @media only screen and (max-width:600px) { 
+    font-size: 50px;  
+    margin: 20px;
+  }
   
 }
 
@@ -25,7 +33,11 @@ body > h2 {
     margin: 30px;
     box-shadow: 5px 5px palette.$light-purple;
     border-radius: 10px;
-    @include mixins.phone-landscape;
+    
+    @media only screen and (max-width:600px) { 
+      margin:10px;  
+    }
+
     }
     
     .nav-bar > ul {
@@ -36,8 +48,7 @@ body > h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    @include mixins.phone-landscape;
-    padding:0px;
+      padding:0px;
     }
     
     .nav-bar > ul > li > a {
@@ -45,7 +56,10 @@ body > h2 {
     font-family: typography.$header-cardfont;
     font-size: 20px;
     font-weight: bold;
-    color:black;    
+    color:black;
+    @media only screen and (max-width:600px) { 
+      font-size: 12px;  
+    }    
     }
     
     .nav-bar > ul > li > a:hover {
@@ -99,6 +113,7 @@ body > h2 {
       font-family: typography.$header-cardfont;
       text-align: center;
       font-weight: bold;
+      margin-bottom: 50px;
     }
   }
   
@@ -111,6 +126,10 @@ body > h2 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-around;
     width:1900px;  
+    @media only screen and (max-width: 900px) {
+      grid-template-columns: 1fr;
+      width:70vw;
+  }
 
    }
 
@@ -118,39 +137,107 @@ body > h2 {
   .bigbox1 {
     @include mixins.bigbox;
     margin-left:50px;
-    
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+      width: 60vw;
+      height: 70vh;
+      margin-left: 30vw;
+  }
+
+    &__project-header {
+      @media only screen and (max-width: 900px) {
+      font-size: 25px;
+  }
+      
+    }
+
   }
   
   .littlebox1 {
     @include mixins.littlebox;
-
+    @media only screen and (max-width: 900px) {
+      width: 30vw;
+      height: 30vw;
+  }
   }
 
   .bigbox2 {
     @include mixins.bigbox;
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+      width: 60vw;
+      height: 70vh;
+      margin-left: 30vw;
+  }
+
+    &__project-header {
+      @media only screen and (max-width: 900px) {
+      font-size: 25px;
+  }
+      
+    }
 
   }
   
   .littlebox2 {
     @include mixins.littlebox;
+    @media only screen and (max-width: 900px) {
+      width: 30vw;
+      height: 30vw;
+  }
+    
   }
 
   .bigbox3 {
     @include mixins.bigbox;
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+      width: 60vw;
+      height: 70vh;
+      margin-left: 30vw;
+  }
+
+    &__project-header {
+      @media only screen and (max-width: 900px) {
+      font-size: 25px;
+  }
+      
+    }
       
   }
   
   .littlebox3 {
     @include mixins.littlebox;
+    @media only screen and (max-width: 900px) {
+      width: 30vw;
+      height: 30vw;
+  }
   }
   
   .bigbox4 {
     @include mixins.bigbox;
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+      width: 60vw;
+      height: 70vh;
+      margin-left: 30vw;
+  }
+
+    &__project-header {
+      @media only screen and (max-width: 900px) {
+      font-size: 25px;
+  }
+      
+    }
    
   }
   
   .littlebox4 {
     @include mixins.littlebox;
+    @media only screen and (max-width: 900px) {
+      width: 30vw;
+      height: 30vw;
+  }
   }
 
 
@@ -264,7 +351,9 @@ ul {
     align-items: center;
     align-content: center;
     font-family: typography.$header-cardfont;
-    @include mixins.phone-landscape;
+    @media only screen and (max-width:600px) { 
+      display:none;
+    }
   }
 
   .footer-flex {
