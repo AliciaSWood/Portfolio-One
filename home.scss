@@ -2,24 +2,30 @@
 @use "./typography";
 @use "./mixins";
 
-
 body {
   background-image: url("https://i.imgur.com/GgJ7r1h.png");
+
 }
 
+
 //Home Page
-body > h1 {
-    @include typography.home-body(200px);
+
+.home-title {
+ @include typography.home-body(200px);
+   
 }
+
 body > h2 {
   @include typography.home-body(50px);
+  
 }
 
 // Top Navigation Bar
-nav {
+.nav-bar {
     margin: 30px;
     box-shadow: 5px 5px palette.$light-purple;
     border-radius: 10px;
+    @include mixins.phone-landscape;
     }
     
     .nav-bar > ul {
@@ -30,6 +36,8 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @include mixins.phone-landscape;
+    padding:0px;
     }
     
     .nav-bar > ul > li > a {
@@ -94,6 +102,8 @@ nav {
     }
   }
   
+
+
 // Projects Page Cards
 
   .ultra-box {
@@ -143,6 +153,7 @@ nav {
     @include mixins.littlebox;
   }
 
+
 // About Me 
 
 .about-info {
@@ -151,12 +162,18 @@ nav {
     align-items:center;
     height:600px;
     width:1900px;
+    @media only screen and (max-width: 900px) {
+      height:70vh;
+      width:100vw;
+  }
 
     &--wordbox {
       flex-direction: column;
       padding-left: 80px;
       padding-right: 80px;
       text-align: center;
+
+      
     }
 
     &--para {
@@ -164,7 +181,7 @@ nav {
       justify-content: center;
       flex-direction: column;
       font-family: typography.$header-cardfont;
-      ;
+      
     }
 }
 
@@ -173,33 +190,39 @@ nav {
   justify-content: space-around;
   margin-left: 300px;
   margin-top: 130px;
+  @media only screen and (max-width: 900px) {
+    display:none;
+    @include mixins.phone-landscape;
+}
 }
 
 //Skills Page
  
 .transparent-box {
   background-color:rgb(148, 5, 148, 0.2);
-  height: 42vw;
+  height: 83vh;
   width: 80vw;
   margin:auto;
   border-radius: 10px;
+  margin-bottom: 100px;
+  @include mixins.phone-landscape;
 }
 
 .skills-list {
-  height: 41vw;
+  height: 83vh;
   width: 80vw;
-  margin:auto;
-  box-shadow: none;
+  
     
 ul {
   list-style-type: none;
-  height: 800px;
+  height: 83vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   text-align: center;
   font-family: typography.$header-cardfont;
-  margin:auto;
+
+  @include mixins.phone-landscape;
 
   li > img {
     height:200px;
@@ -223,5 +246,42 @@ ul {
     box-shadow: 5px 5px palette.$deep-purple;
     border-radius: 10px;
     border: 2px solid black;
+    @include mixins.phone-landscape;
 
    }
+
+   // Footer Styles (Universal)
+    .footer {
+    border:2px solid black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 5%;
+    background-color: palette.$light-purple;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    font-family: typography.$header-cardfont;
+    @include mixins.phone-landscape;
+  }
+
+  .footer-flex {
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    height: 40px;
+    @include mixins.phone-landscape;
+
+      &--icons {
+        height: 40px;
+        width:40px;
+
+        &:hover {
+          cursor:pointer;
+          opacity:0.7;
+        }
+      }
+
+  }

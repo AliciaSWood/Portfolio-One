@@ -55,22 +55,62 @@ $lg:1200px;
 $xl:1440px;
 
 @mixin phone-landscape {
-    @media (min-width: $xs) { @content; }
+    @media only screen and (max-width:$xs) { 
+      @content; 
+     
+      .nav-bar {
+        font-size: 12px;
+      }
+    
+      .skills-list {
+      height: 20vh;
+      width: 80vw;  
+
+      }
+      .skills-list > ul {
+        grid-template-columns: 1fr;
+      }
+
+      .text-wrap {
+        display: none;
+      }
+
+    
+    .copyright {
+      display: none;
+    }
+
+    .footer-flex {
+      width: 100vw;
+      height: 10vw;
+      align-items: center;
+  
+        &--icons {
+          height: 25px;
+          width:25px;
+
+        }
+    }
+       
   }
+}
+
+
   
   @mixin tablet-landscape {
     @media only screen and (min-width: $xs) and (max-width:$sm) {
         @content;
+      font-size: 12px;
     }
   }
   
-  @mixin phone-screen {
-    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-      @content;
-      .exampleclass {
-        background: #bada55;
-        font-family: typography.$header-cardfont;
-        font-size: 20px; 
-      }
-    }
-  }
+//  @mixin phone-screen {
+//    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+ //     @content;
+ //     .exampleclass {
+ //       background: #bada55;
+ //       font-family: typography.$header-cardfont;
+  //      font-size: 20px; 
+  //    }
+  //  }
+ // }
