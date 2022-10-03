@@ -4,24 +4,143 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="home.css"/>
+    <title>Alicia Wood</title>
+    <link rel="stylesheet" href="one-page.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <nav class="nav-bar">
         <ul>
-            <li><a href ="index.html">Home</a></li>
-            <li><a href ="aboutme.html">About Me</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href ="#index">Home</a></li>
+            <li><a href ="#aboutme">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <h1 class = "home-title">Alicia Wood.</h1>
-    <h2>Software Developer.</h2>
+
+    <div id = "index">
+        <h1 class = "home-title">Alicia Wood.</h1>
+        <h2 class = "home-subheader">Software Developer.</h2>
+    </div>
+
+    <div id = "aboutme">
+        <div class="about-info">
+            <img class = "dragon-image"src = "assets/img/dragon.png">
+                <div class = "about-info about-info--wordbox">
+                    <h2 class = "about-info--para">Welcome to my portfolio!
+                    </h2>
+                    <h2 class = "about-info--para">I'm Alicia Wood, a developer based in South Australia. When I'm not coding, I can be found still huddled over a computer writing novels, or getting some rare sunshine with my dogs.
+            </h2>
+            <h2 class = "about-info--para">As a developer, my aim is to...
+            </h2>
+    
+        </div>
+        </div>
+    </div>
+
+    <div id = "skills">
+        <div class = "transparent-box">
+            <nav class="skills-list">
+                <ul>
+                    <li><img class="skills-icon" src="assets/img/html-logo.png"></li>
+                    <div class = "text-wrap"><p>Profiency in 'HyperText Markup Language' or 'HTML', which is the standard markup language for documents designed to be displayed in a web browser.</p></div>
+                    <li><img class="skills-icon" src="assets/img/sass-logo.png"></li>
+                    <div class ="text-wrap"><p>Proficiency in 'Sass' which is a CSS preprocessor that adds special features such as variables, nested rules and mixins into regular CSS.</p></div>
+                    <li><img class="skills-icon" src="assets/img/js-logo.png"></li>
+                    <div class = "text-wrap"><p>JavaScript is a programming language that is one of the core technologies of the World Wide Web (alongside HTML and CSS), and can be used to create dynamic and interactive web content.</p></div>
+    
+                </ul>
+                </nav>
+            </div>
+    </div>
+
+<div id = "projects"><div class="ultra-box">
+    <!--Box 1-->
+<div class="bigbox">
+    <div class="littlebox"> <img class = "littlebox" src="assets/img/moon-pattern.jpg">
+    </div>
+    <h1 class = "bigbox__project-header">Project Name</h1>
+    <p class = "bigbox__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur delectus nostrum architecto harum quaerat expedita! Iure nulla necessitatibus ad dignissimos vel ipsum! Repellendus totam cum saepe est doloremque. Sint, reprehenderit.</p>
+
+</div>
+<!--Box 2-->
+<div class="bigbox">
+<div class="littlebox"><img class = "littlebox" src="assets/img/flying-crow.jpg">
+</div>
+<h1 class = "bigbox__project-header">Project Name</h1>
+    <p class = "bigbox__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur delectus nostrum architecto harum quaerat expedita! Iure nulla necessitatibus ad dignissimos vel ipsum! Repellendus totam cum saepe est doloremque. Sint, reprehenderit.</p>
+</div>
+
+<!--Box 3-->
+<div class="bigbox">
+    <div class="littlebox"><img class = "littlebox" src="assets/img/gem.jpg">
+    </div>
+    <h1 class = "bigbox__project-header">Project Name</h1>
+    <p class = "bigbox__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur delectus nostrum architecto harum quaerat expedita! Iure nulla necessitatibus ad dignissimos vel ipsum! Repellendus totam cum saepe est doloremque. Sint, reprehenderit.</p>
+</div>
+
+<!--Box 4-->
+<div class="bigbox">
+    <div class="littlebox"><img class = "littlebox" src="assets/img/moon2.jpg">
+    </div>
+    <h1 class = "bigbox__project-header">Project Name</h1>
+    <p class = "bigbox__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur delectus nostrum architecto harum quaerat expedita! Iure nulla necessitatibus ad dignissimos vel ipsum! Repellendus totam cum saepe est doloremque. Sint, reprehenderit.</p>
+</div>
+
+</div></div>
+
+
+
+<div id = "contact">
+    <div class="contactbox">
+        <form action="https://formspree.io/f/xzbwraee" method="POST">
+            <!--Form - Name-->
+            <fieldset>
+            <label class="text-type">Full Name:</label>
+            <input class ="text-type" type="text" placeholder="Your name..." type="" required/> 
+        </fieldset>
+          <!--Form - Business-->
+        <fieldset>
+            <label class="text-type">Business Name (if applicable):</label>
+            <input class ="text-type" type="text" placeholder="Your business..." type=""/> 
+        </fieldset>
+          <!--Form - Country-->
+     <fieldset>
+            <label class="text-type">Country: </label>
+            <input class ="text-type" type="text" placeholder="Your country..." type="" required/>   
+        </fieldset>
+          <!--Form - Email-->
+        <fieldset>
+            <label class="text-type">Email Address:</label>
+            <input class ="text-type" type="text" placeholder="Your email..." type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"required/> 
+        </fieldset>
+          <!--Form - Number-->
+        <fieldset>
+            <label class="text-type">Phone Number:</label>
+            <input class ="text-type" type="number" placeholder="Your phone number..." type="number"/> 
+        </fieldset>
+          <!--Form - Message -->
+        <fieldset>
+            <label class="text-type">Inquiry:</label>
+            <textarea cols ="30" rows="6" class ="text-type__resize" placeholder="Type your message..." required></textarea>
+        </fieldset>
+        <button class="btn btn__submit" type = "submit" >Submit</button>
+        <button class="btn btn__clear" input type="reset">Clear</button>
+        </form>
+    
+        <!--Alternative to contact through-->
+        <p class = "contactbox__end-para">Alternatively, you can contact me through <a href="" target="blank">Instagram</a> or <a href = "" target="_blank">LinkedIn</a></p>
+        <footer class="footer">
+            <div class="footer-flex"> <a href="index.html"><img class = "footer-flex--icons" src = "assets/img/linked-in.ico"></a> 
+                <a href="index.html"><img class = "footer-flex--icons" src = "assets/img/github-icon.png"> </a>
+                <a href="index.html"><img class = "footer-flex--icons" src = "assets/img/insta-icon.png"></a>
+            </div>
+            <p class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear())</script> Alicia Wood All Rights Reserved</p>
+        </footer>
+</div>
 
 
 </body>
-
 </html>

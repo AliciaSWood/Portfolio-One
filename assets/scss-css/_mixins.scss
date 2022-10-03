@@ -1,0 +1,118 @@
+@use "./assets/scss-css/palette";
+@use "./assets/scss-css/typography";
+
+// Projects Page Mixins
+
+@mixin littlebox {
+    width: 16vw;
+    height: 16vw;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:15px;
+  }
+
+  @mixin bigbox{
+    background-color:rgb(130, 175, 211);
+      width: 20vw;
+      height: 38vw;
+      margin: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 10px;
+  
+      &__project-header {
+        color: palette.$deep-purple;
+        font-family: typography.$header-cardfont;
+        
+      }
+  
+      &__desc {
+        display: flex;
+        text-align: center;
+        margin:8px;
+        padding:8px;
+        font-size: 20px;
+  
+      }
+          
+      &:hover {
+        box-shadow: 4px 4px 4px palette.$light-purple;
+        opacity:0.7;
+        cursor:pointer;
+  
+    }
+  
+  }
+
+  //Page Background
+
+  @mixin main-backgrounds ($heights){
+    height: $heights;
+    display: inline-block;
+    width: 100%;
+    margin:none;
+    padding:none;
+    background-image: url("assets/img/background.png");
+  }
+
+  //Media Queries Mixins
+//Some common breakpoints for widths of devices:
+
+//320px — 480px: Mobile devices
+//481px — 768px: iPads, Tablets
+//769px — 1024px: Small screens, laptops
+//1025px — 1200px: Desktops, large screens
+//1201px and more —  Extra large screens, TV
+
+$xs:480px;
+$sm:768px;
+$md:1024px;
+$lg:1200px;
+
+@mixin phone-landscape {
+    @media only screen and (max-width:$xs) { 
+      @content; 
+     
+      .nav-bar {
+        font-size: 12px;
+      }
+    
+      .skills-list {
+      height: 20vh;
+      width: 80vw;  
+
+      }
+      .skills-list > ul {
+        grid-template-columns: 1fr;
+      }
+
+      .text-wrap {
+        display: none;
+      }
+       
+  }
+}
+
+
+
+  
+  @mixin tablet-landscape {
+    @media only screen and (min-width: $xs) and (max-width:$sm) {
+        @content;
+      font-size: 12px;
+    }
+  }
+  
+//  @mixin phone-screen {
+//    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+ //     @content;
+ //     .exampleclass {
+ //       background: #bada55;
+ //       font-family: typography.$header-cardfont;
+  //      font-size: 20px; 
+  //    }
+  //  }
+ // }

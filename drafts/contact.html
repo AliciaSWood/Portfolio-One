@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="home.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href ="./drafts/draft.html">Home</a></li>
+            <li><a href ="./drafts/aboutme.html">About Me</a></li>
+            <li><a href="./drafts/skills.html">Skills</a></li>
+            <li><a href="./drafts/projects.html">Projects</a></li>
+            <li><a href="./drafts/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="contactbox">
+    <form action="https://formspree.io/f/xzbwraee" method="POST">
+        <!--Form - Name-->
+        <fieldset>
+        <label class="text-type">Full Name:</label>
+        <input class ="text-type" type="text" placeholder="Your name..." type="" required/> 
+    </fieldset>
+      <!--Form - Business-->
+    <fieldset>
+        <label class="text-type">Business Name (if applicable):</label>
+        <input class ="text-type" type="text" placeholder="Your business..." type=""/> 
+    </fieldset>
+      <!--Form - Country-->
+ <fieldset>
+        <label class="text-type">Country: </label>
+        <input class ="text-type" type="text" placeholder="Your country..." type="" required/>   
+    </fieldset>
+      <!--Form - Email-->
+    <fieldset>
+        <label class="text-type">Email Address:</label>
+        <input class ="text-type" type="text" placeholder="Your email..." type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"required/> 
+    </fieldset>
+      <!--Form - Number-->
+    <fieldset>
+        <label class="text-type">Phone Number:</label>
+        <input class ="text-type" type="number" placeholder="Your phone number..." type="number"/> 
+    </fieldset>
+      <!--Form - Message -->
+    <fieldset>
+        <label class="text-type">Inquiry:</label>
+        <textarea cols ="30" rows="6" class ="text-type__resize" placeholder="Type your message..." required></textarea>
+    </fieldset>
+    <button class="btn btn__submit" type = "submit" >Submit</button>
+    <button class="btn btn__clear" input type="reset">Clear</button>
+    </form>
+
+    <!--Alternative to contact through-->
+    <p class = "contactbox__end-para">Alternatively, you can contact me through <a href="" target="blank">Instagram</a> or <a href = "" target="_blank">LinkedIn</a></p>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer-flex"> <a href="index.html"><img class = "footer-flex--icons" src = "https://iconarchive.com/download/i97547/sicons/basic-round-social/linkedin.ico"></a> 
+            <a href="index.html"><img class = "footer-flex--icons" src = "https://cdn-icons-png.flaticon.com/512/25/25231.png"> </a>
+            <a href="index.html"><img class = "footer-flex--icons" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/1025px-Instagram-Icon.png"></a>
+        </div>
+        <p class="copyright">Copyright &copy; <script>document.write(new Date().getFullYear())</script> Alicia Wood All Rights Reserved</p>
+    </footer>
+</div>
+
+</body>
+</html>

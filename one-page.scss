@@ -1,0 +1,398 @@
+@use "./palette";
+@use "./assets/scss-css/typography";
+@use "./assets/scss-css/mixins";
+
+$xs:480px;
+$sm:768px;
+$md:1024px;
+$lg:1200px;
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+//Home Page
+
+.home-title {
+    @include typography.home-body(150px);
+    margin-top: 20vh;
+
+    @media only screen and (max-width:$xs) { 
+     font-size: 90px;  
+     padding: 70px 0;
+     margin-top: 5vh;
+   }
+
+   @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
+    font-size: 150px;
+  }
+  @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
+    font-size: 130px;
+  }
+   }
+   
+   
+   .home-subheader {
+     @include typography.home-body(50px);
+     
+   }
+
+#index {
+    @include mixins.main-backgrounds (900px);
+}
+
+
+// About Me 
+
+.about-info {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    height:60vh;
+    width:90vw;
+    margin-top: 12vh;
+   // @media only screen and (max-width: 900px) {
+   //   height:70vh;
+   //   width:100vw;
+ // }
+
+    &--wordbox {
+      flex-direction: column;
+      padding-left: 5vw;
+      padding-right: 5vw;
+      text-align: center;
+    
+      @media only screen and (max-width: $xs) {
+        margin: 30vh 3vw 6vh 9vw; 
+        }
+    }
+
+    &--para {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-family: typography.$header-cardfont;
+      
+    }
+}
+
+.dragon-image {
+  margin-left: 20vw;
+  margin-top: 20vh;
+
+  @media only screen and (max-width: $xs) {
+    display:none;
+    }
+    @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
+        width:40vw;
+        height:40vh;
+        margin: 60vh 0vw 50vh 5vw;
+      }
+      @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
+        width:40vw;
+        height:40vh;
+        margin: 60vh 0vw 50vh 10vw;
+      }
+      @media only screen and (min-width: ($md + 1px)) and (max-width:$lg) { 
+        width:40vw;
+        height:40vh;
+        margin: 60vh 0vw 50vh 10vw;
+      }
+}
+
+#aboutme {
+    @include mixins.main-backgrounds (900px);
+
+}
+
+//Skills Page
+ 
+.transparent-box {
+    background-color:rgb(148, 5, 148, 0.2);
+    height: 83vh;
+    width: 80vw;
+    margin: 10vh 10vw 10vh 10vw;
+    border-radius: 10px;
+
+    @include mixins.phone-landscape;
+  }
+  
+  .skills-list {
+    display: flex;
+    justify-content: center;
+    height: 83vh;
+    width: 80vw;    
+      
+  ul {
+    list-style-type: none;
+    height: 83vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    font-family: typography.$header-cardfont;
+  
+    @include mixins.phone-landscape;
+
+    @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
+        font-size: 12px;
+      }
+  
+    li > img {
+      height:200px;
+      width:180px;
+      padding-right: 8vw;
+      
+      @media only screen and (max-width: $xs) {
+        height:150px;
+      width:130px;
+        }
+     }
+  
+      }
+     }
+     
+     .text-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 33vw;
+      height:100px;
+      background-color: rgb(190, 218, 240);
+      padding: 10px;
+      box-shadow: 5px 5px palette.$deep-purple;
+      border-radius: 10px;
+      border: 2px solid black;
+      @include mixins.phone-landscape;
+  
+     }
+#skills {
+
+    @include mixins.main-backgrounds (900px);
+}
+
+// Projects Page Cards
+
+.ultra-box {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-around;
+    width:100%;  
+    margin: 10vh 0vw 10vh 0vw;
+    height:fit-content;
+    
+    @media only screen and (max-width: $xs) {
+        grid-template-columns: 1fr;
+      width:70vw;
+      margin: 10vh 10vw 10vh 12vw;
+        }
+    
+        @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
+        grid-template-columns: 1fr;
+      width:70vw;
+      }
+
+
+        @media only screen and (min-width: ($sm + 1px)) and (max-width:$lg) { 
+    grid-template-columns: 1fr 1fr;
+    width:100%;
+    margin-left: 5vw;
+  }
+
+   }
+
+
+  .bigbox {
+    @include mixins.bigbox;
+    margin-left:50px;
+
+    @media only screen and (max-width: $xs) {
+        grid-template-columns: 1fr;
+      width:50vw;
+      height: 80vw;
+
+        }
+
+    @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
+       flex-direction: column;
+      width: 52vw;
+      height: 70vh;
+      margin-left: 30vw;
+      }
+ 
+  @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
+      width: 35vw;
+      height: 70vh;
+      margin:none;
+  }
+  @media only screen and (min-width: ($md + 1px)) and (max-width:$lg) { 
+    width: 40vw;
+    height: 70vh;
+    margin:none;
+}
+
+    
+    &__desc {
+        @media only screen and (max-width: $xs){
+        font-size: 12px;
+    }
+
+  }
+}
+  .littlebox {
+    @include mixins.littlebox;
+    @media only screen and (max-width: 900px) {
+      width: 30vw;
+      height: 30vw;
+  }
+  @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
+    width: 30vw;
+    height: 30vh;
+}
+  }
+
+  
+#projects {
+    @include mixins.main-backgrounds (fit-content);
+   
+}
+
+// Contact Form
+.text-type {
+    font-family: typography.$header-cardfont;
+    font-weight: bolder;
+    padding:8px;
+    margin-left:10px;
+    
+  }
+
+  form > fieldset {
+    border:20px solid palette.$deep-purple;
+    border-radius: 10px;
+    margin: 0vh 10vw 0vh 10vw;
+    box-shadow: 5px 5px rgb(253, 137, 253);
+    
+  }
+  .btn {
+    border: 2px solid black;
+    font-family: typography.$header-cardfont;
+    font-size: 20px;
+    margin-top:20px;
+    font-size: 20px;
+    border-radius: 10px;
+    
+
+    &__submit {
+        background-color: rgb(70, 187, 70);
+        margin-left:200px;;
+    }
+    &__clear {
+        background-color: rgb(236, 236, 84);
+    }
+    &:hover {
+        box-shadow: 2px 2px 5px palette.$light-purple;
+        cursor:pointer;
+      }
+  }
+
+  .contactbox {
+        margin: 10vh 0vw 10vh 0vw;
+
+    &__end-para {
+      font-family: typography.$header-cardfont;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
+  }
+  
+#contact {
+    @include mixins.main-backgrounds (900px);
+}
+
+
+
+// Top Navigation Bar
+.nav-bar {
+    box-shadow: 5px 5px palette.$light-purple;
+    border-radius: 10px;
+    position: fixed;
+    width: 90%;
+    overflow: hidden;
+    top: 0;
+    margin: 2vh 5vw 2vh 5vw;
+         
+    @media only screen and (max-width:600px) { 
+      margin:10px;  
+    }
+
+    }
+    
+    .nav-bar > ul {
+    list-style-type:none;
+    border: 3px solid palette.$deep-purple;
+    border-radius: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+      padding:0px;
+      margin:0px;
+    }
+    
+    .nav-bar > ul > li > a {
+    text-decoration: none;
+    font-family: typography.$header-cardfont;
+    font-size: 20px;
+    font-weight: bold;
+    color:black;
+    @media only screen and (max-width:600px) { 
+      font-size: 12px;  
+    }    
+    }
+    
+    .nav-bar > ul > li > a:hover {
+    color: palette.$deep-purple;
+    text-shadow: 3px 3px 5px palette.$light-purple;
+    }
+
+
+   // Footer Styles (Universal)
+    .footer {
+    border:2px solid palette.$deep-purple;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 5%;
+    background-color: palette.$light-purple;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    font-family: typography.$header-cardfont;
+    @media only screen and (max-width:600px) { 
+      display:none;
+    }
+  }
+
+  .footer-flex {
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    height: 40px;
+    @include mixins.phone-landscape;
+
+      &--icons {
+        height: 40px;
+        width:40px;
+
+        &:hover {
+          cursor:pointer;
+          opacity:0.7;
+        }
+      }
+
+  }
