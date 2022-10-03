@@ -1,10 +1,5 @@
 @use "./assets/scss-css/palette";
 
-@mixin form-text {
-    @include palette.hard-color;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 $header-cardfont: 'Libre Baskerville';
 
 @mixin home-body ($size){
