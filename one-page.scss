@@ -1,15 +1,23 @@
-@use "./palette";
-@use "./assets/scss-css/typography";
 @use "./assets/scss-css/mixins";
+@use "./assets/scss-css/typography";
+
+
+$deep-purple:rgb(94, 84, 142);
+$light-purple:rgb(166, 145, 194);
 
 $xs:480px;
 $sm:768px;
 $md:1024px;
 $lg:1200px;
 
-
+body {
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+}
 html {
     scroll-behavior: smooth;
+    overflow: auto;
 }
 
 //Home Page
@@ -24,12 +32,16 @@ html {
      margin-top: 5vh;
    }
 
-   @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
-    font-size: 150px;
-  }
-  @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
-    font-size: 130px;
-  }
+   @media only screen and (max-width: 611px) {
+    font-size: 90px;
+    }
+
+  //  @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
+  //   font-size: 150px;
+  // }
+  // @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
+  //   font-size: 130px;
+  // }
    }
    
    
@@ -65,6 +77,10 @@ html {
         }
     }
 
+    @media only screen and (max-width: 1380px){
+      font-size: 12px;
+  }
+
     &--para {
       display: flex;
       justify-content: center;
@@ -77,6 +93,7 @@ html {
 .dragon-image {
   margin-left: 20vw;
   margin-top: 20vh;
+
 
   @media only screen and (max-width: $xs) {
     display:none;
@@ -107,9 +124,9 @@ html {
  
 .transparent-box {
     background-color:rgb(148, 5, 148, 0.2);
-    height: 83vh;
-    width: 80vw;
-    margin: 10vh 10vw 10vh 10vw;
+    height: 81vh;
+    width: 78vw;
+    margin: 10vh 10vw 10vh 11vw;
     border-radius: 10px;
 
     @include mixins.phone-landscape;
@@ -120,22 +137,31 @@ html {
     justify-content: center;
     height: 83vh;
     width: 80vw;    
+    padding-left: 3vw;
+    @media only screen and (max-width: 1040px) {
+      height: 50vh;
+
+      }
       
   ul {
     list-style-type: none;
     height: 83vh;
     width: 80vw;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     text-align: center;
     font-family: typography.$header-cardfont;
+
+    @media only screen and (max-width: 1040px) {
+      grid-template-columns: 1fr 1fr;
+      height: 75vh;
+
+      }
   
     @include mixins.phone-landscape;
 
-    @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
-        font-size: 12px;
-      }
+  
   
     li > img {
       height:200px;
@@ -146,8 +172,31 @@ html {
         height:150px;
       width:130px;
         }
+
+        @media only screen and (max-width: 1040px) {
+          height: 100px;
+          width: 100px;
+          }
      }
   
+     #icon{
+      height:200px;
+      width:200px;
+
+      @media only screen and (max-width: 1040px) {
+        height: 100px;
+        width: 100px;
+        }
+     }
+
+     #iconj {
+      width: 150px;
+      @media only screen and (max-width: 1040px) {
+        height: 100px;
+        width: 90px;
+        }
+     }
+
       }
      }
      
@@ -159,7 +208,7 @@ html {
       height:100px;
       background-color: rgb(190, 218, 240);
       padding: 10px;
-      box-shadow: 5px 5px palette.$deep-purple;
+      box-shadow: 5px 5px $deep-purple;
       border-radius: 10px;
       border: 2px solid black;
       @include mixins.phone-landscape;
@@ -215,18 +264,18 @@ html {
     @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
        flex-direction: column;
       width: 52vw;
-      height: 70vh;
+      height: 60vh;
       margin-left: 30vw;
       }
  
   @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
-      width: 35vw;
-      height: 70vh;
+      width: 32vw;
+      height: 65vh;
       margin:none;
   }
   @media only screen and (min-width: ($md + 1px)) and (max-width:$lg) { 
-    width: 40vw;
-    height: 70vh;
+    width: 32vw;
+    height: 65vh;
     margin:none;
 }
 
@@ -245,8 +294,8 @@ html {
       height: 30vw;
   }
   @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
-    width: 30vw;
-    height: 30vh;
+    width: 28vw;
+    height: 28vh;
 }
   }
 
@@ -266,7 +315,7 @@ html {
   }
 
   form > fieldset {
-    border:20px solid palette.$deep-purple;
+    border:20px solid $deep-purple;
     border-radius: 10px;
     margin: 0vh 10vw 0vh 10vw;
     box-shadow: 5px 5px rgb(253, 137, 253);
@@ -289,8 +338,9 @@ html {
         background-color: rgb(236, 236, 84);
     }
     &:hover {
-        box-shadow: 2px 2px 5px palette.$light-purple;
+        box-shadow: 2px 2px 5px $light-purple;
         cursor:pointer;
+        transform: scale(1.07);
       }
   }
 
@@ -313,13 +363,14 @@ html {
 
 // Top Navigation Bar
 .nav-bar {
-    box-shadow: 5px 5px palette.$light-purple;
+    box-shadow: 5px 5px $light-purple;
     border-radius: 10px;
     position: fixed;
-    width: 90%;
+    width: 90vw;
     overflow: hidden;
     top: 0;
     margin: 2vh 5vw 2vh 5vw;
+    background-color: rgba(245, 245, 245, 0.904);
          
     @media only screen and (max-width:600px) { 
       margin:10px;  
@@ -329,7 +380,7 @@ html {
     
     .nav-bar > ul {
     list-style-type:none;
-    border: 3px solid palette.$deep-purple;
+    border: 3px solid $deep-purple;
     border-radius: 10px;
     height: 40px;
     display: flex;
@@ -345,26 +396,30 @@ html {
     font-size: 20px;
     font-weight: bold;
     color:black;
+
+      &:hover {
+        color: $deep-purple;
+    text-shadow: 3px 3px 5px $light-purple;
+        transition: 0.2s;
+        transform: scale(1.6);
+      }
+
     @media only screen and (max-width:600px) { 
       font-size: 12px;  
     }    
     }
     
-    .nav-bar > ul > li > a:hover {
-    color: palette.$deep-purple;
-    text-shadow: 3px 3px 5px palette.$light-purple;
-    }
 
 
    // Footer Styles (Universal)
     .footer {
-    border:2px solid palette.$deep-purple;
+    border:2px solid $deep-purple;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100vw;
     height: 5%;
-    background-color: palette.$light-purple;
+    background-color: rgb(166, 145, 194);
     display: flex;
     justify-content: space-around;
     align-items: center;

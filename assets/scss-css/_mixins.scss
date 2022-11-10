@@ -1,6 +1,8 @@
-@use "./assets/scss-css/palette";
-@use "./assets/scss-css/typography";
 
+@use "./typography";
+
+$deep-purple:rgb(146, 44, 146);
+$light-purple:rgb(212, 115, 212);
 // Projects Page Mixins
 
 @mixin littlebox {
@@ -11,10 +13,11 @@
     justify-content: center;
     align-items: center;
     margin-top:15px;
+    text-align: center;
   }
 
   @mixin bigbox{
-    background-color:rgb(130, 175, 211);
+    background-image: linear-gradient(110deg, #769fd8 40%, #e0e3e6);
       width: 20vw;
       height: 38vw;
       margin: 20px;
@@ -24,8 +27,9 @@
       border-radius: 10px;
   
       &__project-header {
-        color: palette.$deep-purple;
+        color: $deep-purple;
         font-family: typography.$header-cardfont;
+        font-size: 1.6rem;
         
       }
   
@@ -39,10 +43,10 @@
       }
           
       &:hover {
-        box-shadow: 4px 4px 4px palette.$light-purple;
-        opacity:0.7;
+        box-shadow: 4px 4px 4px $light-purple;
+        transition: 0.2s;
         cursor:pointer;
-  
+        transform: scale(1.07);
     }
   
   }
