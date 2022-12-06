@@ -1,5 +1,7 @@
 # Portfolio-One
 
-This is the comment section for my Portfolio first draft 
+Welcome to my new portfolio! This has been built using just HTML and CSS/SCSS
 
-Media Queries have been my biggest hurdle, and keeping code tidy (and avoiding repetition).
+This was my first project on the _nology course, and has been modified to better reflect my abilities and now includes links to my other projects on GitHub.
+
+My biggest initial challenge with this project was media queries so I could adjust my web document to accomodate different screen sizes. Another challenge was keeping code tidy, which has been helped vastly by the installation of Prettier.
