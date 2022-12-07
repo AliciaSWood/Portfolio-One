@@ -36,12 +36,6 @@ html {
     font-size: 90px;
     }
 
-  //  @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
-  //   font-size: 150px;
-  // }
-  // @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
-  //   font-size: 130px;
-  // }
    }
    
    
@@ -51,11 +45,11 @@ html {
    }
 
 #index {
-    @include mixins.main-backgrounds (900px);
+    @include mixins.main-backgrounds ();
 }
 
 
-// About Me 
+// About Me Page
 
 .about-info {
     display: flex;
@@ -90,33 +84,34 @@ html {
     }
 }
 
-.dragon-image {
+.self-image {
   margin-left: 20vw;
-  margin-top: 20vh;
+  margin-top: 18vh;
+  width: 35vw;
+  height: 40vh;
+  border-radius: 10px;
 
 
   @media only screen and (max-width: $xs) {
     display:none;
     }
     @media only screen and (min-width: ($xs + 1px)) and (max-width:$sm) { 
-        width:40vw;
-        height:40vh;
-        margin: 60vh 0vw 50vh 5vw;
+        display:none;
       }
       @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
-        width:40vw;
+        width:35vw;
         height:40vh;
         margin: 60vh 0vw 50vh 10vw;
       }
       @media only screen and (min-width: ($md + 1px)) and (max-width:$lg) { 
-        width:40vw;
+        width:35vw;
         height:40vh;
         margin: 60vh 0vw 50vh 10vw;
       }
 }
 
 #aboutme {
-    @include mixins.main-backgrounds (900px);
+    @include mixins.main-backgrounds ();
 
 }
 
@@ -216,7 +211,7 @@ html {
      }
 #skills {
 
-    @include mixins.main-backgrounds (900px);
+    @include mixins.main-backgrounds ();
 }
 
 // Projects Page Cards
@@ -268,12 +263,12 @@ html {
       margin-left: 30vw;
       }
  
-  @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
+    @media only screen and (min-width: ($sm + 1px)) and (max-width:$md) { 
       width: 32vw;
       height: 65vh;
       margin:none;
   }
-  @media only screen and (min-width: ($md + 1px)) and (max-width:$lg) { 
+    @media only screen and (min-width: ($md + 1px)) and (max-width:$lg) { 
     width: 32vw;
     height: 65vh;
     margin:none;
@@ -282,7 +277,7 @@ html {
     
     &__desc {
         @media only screen and (max-width: $xs){
-        font-size: 12px;
+        font-size: 10px;
     }
 
   }
@@ -299,13 +294,41 @@ html {
 }
   }
 
+.contact-links {
+  text-decoration: none;
+  color: black;
+  font-family: 'Libre Baskerville';
+  @media only screen and (max-width: $xs){
+    font-size: 12px;
+}
+}
+
   
 #projects {
-    @include mixins.main-backgrounds (fit-content);
+    @include mixins.main-backgrounds;
    
 }
 
 // Contact Form
+
+.contact-heading{
+  width:100vw;
+  height:7vh;
+  justify-content: center;
+  display: flex;
+  font-family: typography.$header-cardfont;
+  font-size: 1rem;
+  text-align: center;
+
+  @media only screen and (max-width:760px) { 
+    font-size: 0.7rem;  
+  }
+  @media only screen and (max-width:540px) { 
+    font-size: 0.6rem;  
+  }
+
+}
+
 .text-type {
     font-family: typography.$header-cardfont;
     font-weight: bolder;
@@ -345,18 +368,19 @@ html {
   }
 
   .contactbox {
-        margin: 10vh 0vw 10vh 0vw;
+        margin: 18vh 0vw 10vh 0vw;
 
     &__end-para {
       font-family: typography.$header-cardfont;
       text-align: center;
       font-weight: bold;
       margin-bottom: 50px;
+
     }
   }
   
 #contact {
-    @include mixins.main-backgrounds (900px);
+    @include mixins.main-backgrounds ();
 }
 
 
@@ -396,12 +420,13 @@ html {
     font-size: 20px;
     font-weight: bold;
     color:black;
+    display: inline-block;
 
       &:hover {
         color: $deep-purple;
-    text-shadow: 3px 3px 5px $light-purple;
-        transition: 0.2s;
-        transform: scale(1.6);
+        text-shadow: 3px 3px 5px $light-purple;
+        transition: 0.3s;
+        transform: scale(1.2);
       }
 
     @media only screen and (max-width:600px) { 
